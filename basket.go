@@ -40,3 +40,8 @@ func AddProductToBasket(product_name string) {
 	db.Write("basket_db", "basket", mybasket)
 }
 
+// Delete the basket
+func DeleteBasket() bool {
+	db.Delete("basket_db", "")
+	return !IsBasketExist()
+}

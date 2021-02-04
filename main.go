@@ -8,9 +8,19 @@ func main() {
 		c.JSON(404, gin.H{"message": "Page not found"})
 	})
 
-	r.GET("/ping", func(c *gin.Context) {
+	r.POST("/basket/create", func(c *gin.Context) {
+		message := ""
+		
+		CreateBasket()
+		
+		if IsBasketExist() {
+			message = "Basket has been created"
+		} else {
+			message = "Failed to create a basket"
+		}
+
 		c.JSON(200, gin.H{
-			"message": "pong",
+			"message": message,
 		})
 	})
 
@@ -21,7 +31,25 @@ func main() {
 				"products": mybasket.Products,
 				"total_amount": mybasket.Total,
 			})
+		} else {
+			c.JSON(200, gin.H{
+				"message": "Basket doesn't exist",
+			})
 		}
+	})
+
+	r.DELETE("/basket/delete", func(c *gin.Context) {
+		message := "" 
+		
+		if DeleteBasket() {
+			message = "Basket has been deleted"
+		} else {
+			message = "Error deleting basket"
+		}
+
+		c.JSON(200, gin.H{
+            "message": message,
+        })
 	})
 
 	r.Run()
