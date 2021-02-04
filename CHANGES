@@ -1,3 +1,7 @@
+0.1.2 (2021-02-03)
+------------------
+* Add routes for Create and Delete basket
+
 0.1.1 (2021-02-03)
 ------------------
 * Implementing Gin rest-api module
