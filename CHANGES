@@ -1,3 +1,8 @@
+0.1.1 (2021-02-03)
+------------------
+* Implementing Gin rest-api module
+* Add route to get basket total amount http://api_url/basket/total
+
 0.1.0 (2021-02-02)
 ------------------
 * Project Initialization, golang Rest-API with simple json db (scribble)

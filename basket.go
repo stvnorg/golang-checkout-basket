@@ -27,10 +27,10 @@ func CreateBasket() {
 }
 
 // Get the basket
-func GetBasketTotalAmount() float64 {
+func GetBasketTotalAmount() Basket {
 	db.Read("basket_db", "basket", &mybasket)
 	fmt.Printf("%+v\n", mybasket)
-	return mybasket.Total
+	return mybasket
 }
 
 // Add product to basket
@@ -40,13 +40,3 @@ func AddProductToBasket(product_name string) {
 	db.Write("basket_db", "basket", mybasket)
 }
 
-func main() {
-	fmt.Println(IsBasketExist())
-	CreateBasket()
-	fmt.Println(GetBasketTotalAmount())
-	//AddProductToBasket("PEN")
-	//fmt.Println(GetBasketTotalAmount())
-
-	//AddProductToBasket("TSHIRT")
-    //fmt.Println(GetBasketTotalAmount())
-}
