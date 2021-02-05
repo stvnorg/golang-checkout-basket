@@ -14,7 +14,7 @@ func DiscountPrice(products []string) float64 {
 
     switch key {
     case "MUG":
-      total += 7.5
+      total += qty * 7.5
     case "PEN":
       qty = float64((val/2) + (val%2))
       total += qty * 5.0
