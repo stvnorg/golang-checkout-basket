@@ -28,9 +28,8 @@ func POST_CreateBasket(c *gin.Context) {
 }
 
 func POST_AddProductToBasket(c *gin.Context) {
-  code := strings.ToUpper(c.Query("code"))
-
   if IsBasketExist() {
+    code := strings.ToUpper(c.Param("code"))
     if code == "MUG" || code == "PEN" || code == "TSHIRT" {
       AddProductToBasket(code)
       message = "Product successfully added to the basket"
@@ -77,7 +76,7 @@ func main() {
 
   r.NoRoute(GET_CustomHTTP404)
   r.POST("/basket/create", POST_CreateBasket)
-  r.POST("/basket/add_product", POST_AddProductToBasket)
+  r.POST("/basket/add_product/:code", POST_AddProductToBasket)
   r.GET("/basket/total", GET_TotalAmountInBasket)
   r.DELETE("/basket/delete", DELETE_DeleteBasket)
 
