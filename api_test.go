@@ -7,7 +7,6 @@ import (
 )
 
 func Test_GET_CustomHTTP404(t *testing.T) {
-  gin.SetMode(gin.TestMode)
   w := httptest.NewRecorder()
   c, _ := gin.CreateTestContext(w)
 
@@ -18,7 +17,6 @@ func Test_GET_CustomHTTP404(t *testing.T) {
 }
 
 func Test_POST_CreateBasket(t *testing.T) {
-  gin.SetMode(gin.TestMode)
   w := httptest.NewRecorder()
   c, _ := gin.CreateTestContext(w)
 
@@ -29,9 +27,7 @@ func Test_POST_CreateBasket(t *testing.T) {
 }
 
 func Test_POST_AddProductToBasket(t *testing.T) {
-  gin.SetMode(gin.TestMode)
   w := httptest.NewRecorder()
-
   c, _ := gin.CreateTestContext(w)
   c.Params = []gin.Param{gin.Param{Key: "code", Value: "v"}}
 
@@ -42,7 +38,6 @@ func Test_POST_AddProductToBasket(t *testing.T) {
 }
 
 func Test_GET_TotalAmountInBasket(t *testing.T) {
-  gin.SetMode(gin.TestMode)
   w := httptest.NewRecorder()
   c, _ := gin.CreateTestContext(w)
 
@@ -53,7 +48,6 @@ func Test_GET_TotalAmountInBasket(t *testing.T) {
 }
 
 func Test_DELETE_DeleteBasket(t *testing.T) {
-  gin.SetMode(gin.TestMode)
   w := httptest.NewRecorder()
   c, _ := gin.CreateTestContext(w)
 
