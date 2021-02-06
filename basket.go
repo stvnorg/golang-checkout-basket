@@ -11,7 +11,7 @@ type Basket struct {
 	Total float64
 }
 
-func getEnv(key, fallback string) string {
+func GetEnv(key, fallback string) string {
 	value, exists := os.LookupEnv(key)
 	if !exists {
 		value = fallback
@@ -19,8 +19,10 @@ func getEnv(key, fallback string) string {
 	return value
 }
 
-var db_name = getEnv("DB_NAME", "basket_db")
+// retrieve the environment variable DB_NAME
+var db_name = GetEnv("DB_NAME", "basket_db")
 
+// Initialize the scribble simple json db with name db_name
 var db, _ = scribble.New("./" + db_name, nil)
 
 var mybasket = Basket{}

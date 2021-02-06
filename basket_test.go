@@ -6,7 +6,7 @@ import (
 	"github.com/nanobox-io/golang-scribble"
 )
 
-var test_db, _ = scribble.New("./" + getEnv("DB_NAME", "test_db"), nil)
+var test_db, _ = scribble.New("./" + GetEnv("DB_NAME", "test_db"), nil)
 
 func Test_CreateBasket(t *testing.T) {
     CreateBasket()
