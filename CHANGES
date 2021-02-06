@@ -1,3 +1,9 @@
+0.1.9 (2021-02-06)
+------------------
+* Simplified the discount calculation formula
+* Add Image digest in the ci pipeline (for security reason)
+* Add Prometheus monitoring
+
 0.1.8 (2021-02-06)
 ------------------
 * Add CI Release pipeline (build and push docker image)
