@@ -1,3 +1,7 @@
+0.1.8 (2021-02-06)
+------------------
+* Add CI Release pipeline (build and push docker image)
+
 0.1.7 (2021-02-05)
 ------------------
 * Refactor the code
