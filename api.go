@@ -8,11 +8,12 @@ import (
 
 var message string
 
-// Router to custom http error 404
+// Route for custom http error 404
 func GET_CustomHTTP404(c *gin.Context) {
   c.JSON(404, gin.H{"message": "Page not found"})
 }
 
+// Route for creating a basket
 func POST_CreateBasket(c *gin.Context) {
   CreateBasket()
 
@@ -27,6 +28,7 @@ func POST_CreateBasket(c *gin.Context) {
   })
 }
 
+// Route for adding a product to basket
 func POST_AddProductToBasket(c *gin.Context) {
   if IsBasketExist() {
     code := strings.ToUpper(c.Param("code"))
@@ -45,6 +47,7 @@ func POST_AddProductToBasket(c *gin.Context) {
   })
 }
 
+// Route for getting the total amount in basket
 func GET_TotalAmountInBasket(c *gin.Context) {
   if IsBasketExist() {
     mybasket := GetBasketTotalAmount()
@@ -59,6 +62,7 @@ func GET_TotalAmountInBasket(c *gin.Context) {
   }
 }
 
+// Route to remove basket
 func DELETE_DeleteBasket(c *gin.Context) {
   if DeleteBasket() {
     message = "Basket has been deleted"
