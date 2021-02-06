@@ -3,6 +3,7 @@ package main
 import (
     "fmt"
     "github.com/gin-gonic/gin"
+    "github.com/banzaicloud/go-gin-prometheus"
     "strings"
 )
 
@@ -77,6 +78,10 @@ func DELETE_DeleteBasket(c *gin.Context) {
 
 func main() {
   r := gin.Default()
+
+  p := ginprometheus.NewPrometheus("gin", []string{})
+  p.SetListenAddress(":9900")
+  p.Use(r, "/metrics")
 
   r.NoRoute(GET_CustomHTTP404)
   r.POST("/basket/create", POST_CreateBasket)

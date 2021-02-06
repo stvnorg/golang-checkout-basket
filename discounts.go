@@ -20,7 +20,7 @@ func DiscountPrice(products []string) float64 {
       total += qty * 5.0
     case "TSHIRT":
       if qty >= 3.0 {
-        total += (qty * 20.0) - (qty * 20.0 * 0.25)
+        total += qty * 15.0
       } else {
         total += qty * 20.0
       }
