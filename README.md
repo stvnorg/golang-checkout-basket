@@ -68,13 +68,13 @@ The docker image for the api is hosted in docker hub https://hub.docker.com/repo
 to run it simply by executing below command (without prometheus exposed):
 
 ```bash
-$ docker run -p 8080:8080 -d s7even/golang-checkout-basket:0.2.0
+$ docker run -p 8080:8080 -d s7even/golang-checkout-basket:0.2.2
 ```
 
 and if you want to expose both with prometheus port, just run below command:
 
 ```bash
-$ docker run -p 8080:8080 -p 9900:9900 -d s7even/golang-checkout-basket:0.2.0
+$ docker run -p 8080:8080 -p 9900:9900 -d s7even/golang-checkout-basket:0.2.2
 ```
 Browse the http://localhost:8080/basket/total, to see if the API is running well
 
