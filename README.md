@@ -48,7 +48,7 @@ Total: 62.50€
 
 #### (Optional environment variable)
 The api using a simple json db (scribble golang module). And it has an optional environment variable "DB_NAME".
-Default value for DB_NAME=basket_db, if you want to change it into something else you set the variable
+Default value for DB_NAME=basket_db, if you want to change it into something else you can set the variable
 
 ```bash
 $ export DB_NAME=<your-db-name>
@@ -130,3 +130,32 @@ Example:
 $ curl -X DELETE http://localhost:8080/basket/delete
 ```
 
+## CI Pipeline process
+There are 2 (two) githubActions CI pipeline:
+
+`.github/workflows/go.yml`
+- Developers create a Pull Request and/or Merged the PR
+- The CI will run the build and unit test
+
+`.github/workflows/release.yml`
+- Developers push new tags with semVer versioning X.Y.Z (ex: 1.0.0)
+- The CI pipeline will login to docker hub
+- Build the image with tagging `s7even/golang-checkout-basket:<X.Y.Z>`
+- Push the image to docker hub
+
+## (Optional) Prometheus Monitoring
+
+The prometheus exporter is running on port 9900
+If you choose to enabling it in docker run, make sure you add the correct targets in your `prometheus.yml` 
+
+Example:
+```bash
+global:
+  scrape_interval:     15s
+  evaluation_interval: 15s
+
+scrape_configs:
+  - job_name: prometheus
+    static_configs:
+      - targets: ['192.168.0.10:9900']
+```
