@@ -57,5 +57,7 @@ func AddProductToBasket(product_name string) {
 func DeleteBasket() bool {
 	db.Delete(db_name, "")
 	mybasket.Name = ""
+	mybasket.Products = []string{}
+	mybasket.Total = 0.0
 	return !IsBasketExist()
 }
