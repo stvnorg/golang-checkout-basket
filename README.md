@@ -143,10 +143,12 @@ There are 2 (two) githubActions CI pipeline:
 - Build the image with tagging `s7even/golang-checkout-basket:<X.Y.Z>`
 - Push the image to docker hub
 
+Note: Make sure to update the CHANGES file for the release notes
+
 ## (Optional) Prometheus Monitoring
 
 The prometheus exporter is running on port 9900
-If you choose to enabling it in docker run, make sure you add the correct targets in your `prometheus.yml` 
+If you choose to enabling it in docker run, make sure you add the correct targets in your `prometheus.yml`
 
 Example:
 ```bash

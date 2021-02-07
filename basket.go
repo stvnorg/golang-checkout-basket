@@ -36,6 +36,7 @@ func IsBasketExist() bool {
 // Create the basket
 func CreateBasket() {
 	mybasket.Name = "mybasket"
+	mybasket.Products = []string{}
 	db.Write(db_name, "basket", mybasket)
 }
 
