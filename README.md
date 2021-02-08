@@ -64,7 +64,7 @@ If you run it the first time, it will take some times for the go dependency mana
 The API has Prometheus enabled. It will listen/expose 2 TCP ports, 8080 (the API itself) and 9900 (prometheus exporter)
 
 ### Docker run
-The docker image for the api is hosted in docker hub https://hub.docker.com/repository/docker/s7even/golang-checkout-basket
+The docker image for the api is hosted in docker hub https://hub.docker.com/r/s7even/golang-checkout-basket
 to run it simply by executing below command (without prometheus exposed):
 
 ```bash
