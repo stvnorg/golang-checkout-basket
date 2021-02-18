@@ -9,11 +9,11 @@ A simple checkout HTTP API that contains below operations:
 The store only sells following 3 products:
 
 ```bash
-Code         | Name              |  Price
+Code         | Name         |  Price
 -----------------------------------------------
-PEN          | Lana Pen          |   5.00€
-TSHIRT       | Lana T-Shirt      |  20.00€
-MUG          | Lana Coffee Mug   |   7.50€
+PEN          | Pen          |   5.00€
+TSHIRT       | T-Shirt      |  20.00€
+MUG          | Coffee Mug   |   7.50€
 ```
 
 Various departments have insisted on the following discounts:
